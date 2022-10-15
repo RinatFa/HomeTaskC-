@@ -3,13 +3,23 @@
 // 3 -> 1, 8, 27
 // 5 -> 1, 8, 27, 64, 125
 
-int numberA = 1;
-int numberB = 1;
-Console.Write("Введите максмальное число = ");
-int max = Convert.ToInt32(Console.ReadLine());
-while(numberA <= max){
-    numberB = numberA * numberA * numberA;
-    Console.Write(numberB + " ");
-    numberA += 1;
+// 1. ввод значений
+int GetValue(){
+    Console.Write("Введите максмальное число = ");
+    int max = Convert.ToInt32(Console.ReadLine());
+    return max;
 }
-Console.WriteLine("");
+// 2. вычисление
+void CubesFr1ToN(){
+    int numberA = 1;
+    int numberB = 1;
+    int max = GetValue();
+    while(numberA <= max){
+        numberB = numberA * numberA * numberA;
+        Console.Write(numberB + " ");
+        numberA += 1;
+    }
+    Console.WriteLine("");
+}
+
+CubesFr1ToN();
