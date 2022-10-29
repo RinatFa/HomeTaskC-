@@ -16,32 +16,17 @@ void PrintArray(long[,] matr){
     }
 }
 
-long VerifyI(){
+long VerifyIJ(string sStr){
     long temp;          //Проверка на ввод числа!
     var vNumb = " ";        //в текстовый формат
     while (long.TryParse(vNumb, out temp) == false){
-        Console.Write("Введите строку элемента: ");
+        Console.Write("Введите " + sStr + " элемента: ");
         vNumb = Console.ReadLine();
         if (long.TryParse(vNumb, out temp) == false){
             Console.WriteLine("Введите число!");
         }
     }
-    long i = Convert.ToInt32(vNumb) - 1;  //перевод в индексы элемента
-    return i;
-}
-long VerifyJ(){
-    long temp;          //Проверка на ввод числа!
-    var vNumb = " ";        //в текстовый формат
-    vNumb = " ";            //в текстовый формат
-    while (long.TryParse(vNumb, out temp) == false){
-        Console.Write("Введите столбец элемента: ");
-        vNumb = Console.ReadLine();
-        if (long.TryParse(vNumb, out temp) == false){
-            Console.WriteLine("Введите число!");
-        }
-    }
-    long j = Convert.ToInt32(vNumb) - 1;  //перевод в индексы элемента
-    return j;
+    return Convert.ToInt32(vNumb) - 1;  //перевод в индексы элемента
 }
 
 string OutArray(long[,] lArray1, long i, long j){
@@ -61,8 +46,8 @@ long[,] lArray1 = {{1, 4, 7, 2},
                    {5, 9, 2, 3},
                    {8, 4, 2, 4}
 };
-long i = VerifyI();
-long j = VerifyJ();
+long i = VerifyIJ("строку");
+long j = VerifyIJ("столбец");
 // 2. вычисление
 string sString = OutArray(lArray1, i, j);
 // 3. печать результата
